@@ -47,7 +47,7 @@
   ![avatar](https://github.com/VSchenlj/dataStruct/blob/master/tree/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86.png)  
 **ii、中序遍历**
   规则是若二叉树为空，则空操作返回，否则从根节点开始，中序遍历根节点的左子树，然后是访问根节点，再中序遍历根节点的右子树。如下图所示，遍历顺序为GDHBAEICF。  
-  ![avatar](https://github.com/VSchenlj/dataStruct/blob/master/tree/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86.png)
+  ![avatar](https://github.com/VSchenlj/dataStruct/blob/master/tree/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86.png)  
 **iii、后序遍历**
   规则是若二叉树为空，则空操作返回，否则从左到右先叶子后结点的方式遍历访问左右子树，最后是访问根节点。如下图所示，遍历顺序为GHDBIEFCA。  
   ![avatar](https://github.com/VSchenlj/dataStruct/blob/master/tree/%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86.png)  
