@@ -65,12 +65,21 @@ void postOrderTraverse(BinaryTree T);
  * '#'表示空树，构造二叉链表表示二叉树T
  * @param T 待构造的二叉树
  */
-void createBinaryTree(BinaryTree *T);
+void createBinaryThrTree(BinaryThreadTree *T);
 
 //二叉树线索化：在遍历过程中修改空指针的过程
 /**
  * @brief 中序遍历线索化二叉树
  * 
- * @param p 待线索化的二叉树
+ * @param T 待线索化的二叉树
+ * @param pre 前向指针，始终指向上一个访问对象
  */
-void inThreading(BinaryThreadTree p);
+void inThreading(BinaryThreadTree T,BinaryThreadTree *pre);
+
+//中序线索化二叉树的遍历
+/**
+ * @brief 中序线索化的二叉树遍历输出
+ * 
+ * @param T 待遍历的线索二叉树
+ */
+void inOrderTraverseThr(BinaryThreadTree T);
