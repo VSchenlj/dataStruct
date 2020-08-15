@@ -26,7 +26,7 @@ void postOrderTraverse(BinaryTree T) {
     printf("%c", T->data);
 }
 
-void createBinaryTree(BinaryThreadTree *T) {
+void createBinaryThrTree(BinaryThreadTree *T) {
     elemType ch;
     scanf("%c",&ch);
     if(ch == '#')
