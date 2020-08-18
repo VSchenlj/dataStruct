@@ -24,8 +24,8 @@ void inOrderTraverse(BinaryTree T) {
 void postOrderTraverse(BinaryTree T) {
     if (T == NULL)
         return;
-    inOrderTraverse(T->lchild);
-    inOrderTraverse(T->rchild);
+    postOrderTraverse(T->lchild);
+    postOrderTraverse(T->rchild);
     printf("%c", T->data);
 }
 
