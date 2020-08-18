@@ -52,11 +52,18 @@ void preOrderTraverse(BinaryTree T);
 void inOrderTraverse(BinaryTree T);
 
  /**
- * @brief 序遍历递归算法
+ * @brief 后序遍历递归算法
  * 
  * @param T 二叉树指针
  */
 void postOrderTraverse(BinaryTree T);
+
+/**
+ * @brief 层序遍历算法
+ * 
+ * @param T 二叉树指针
+ */
+void levelOrderTraverse(BinaryTree T);
 
 //二叉树的建立
 /**

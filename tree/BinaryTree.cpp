@@ -1,6 +1,9 @@
 #include "BinaryTree.h"
 #include "stdio.h"
 #include "stdlib.h"
+#include <queue>
+#include <iostream>
+using namespace std;
 
 void preOrderTraverse(BinaryTree T) {
     if (T == NULL)
@@ -26,9 +29,31 @@ void postOrderTraverse(BinaryTree T) {
     printf("%c", T->data);
 }
 
+void levelOrderTraverse(BinaryTree T) {
+    if(T == NULL)
+        return;
+    //利用队列先进先出的特点
+    queue<BinaryTree> q;
+    BinaryTree front;
+    q.push(T);
+    while (!q.empty()) {
+        /* code */
+        front = q.front();
+        q.pop();
+
+        if(front->lchild)
+            q.push(front->lchild);
+        
+        if(front->rchild)
+            q.push(front->rchild);
+        
+        cout<<front->data<<" ";
+    }
+}
+
 void createBinaryThrTree(BinaryThreadTree *T) {
     elemType ch;
-    scanf("%c",&ch);
+    cin >> ch;
     if(ch == '#')
         *T = NULL;
     else {
@@ -55,7 +80,7 @@ void inThreading(BinaryThreadTree T,BinaryThreadTree *pre) {
             T->lchild = *pre;
         }
 
-        if((*preThTree) && !(*pre)->rchild) { //若前一个结点的右孩子不存在，则当前结点为前一个结点的后驱对象
+        if((*pre) && !(*pre)->rchild) { //若前一个结点的右孩子不存在，则当前结点为前一个结点的后驱对象
             (*pre)->rTag = Thread;
             (*pre)->rchild = T;
         }
@@ -69,10 +94,10 @@ void inOrderTraverseThr(BinaryThreadTree T) {
     while(p) {
         while(p->lTag == Link)
             p = p->lchild;
-        printf("%c",p->data);
+        cout << p->data << " ";
         while(p->rTag == Thread && p->rchild !=NULL) {
             p = p->rchild;
-            printf("%c",p->data);
+            cout << p->data << " ";
         }
         p = p->rchild;
     }
