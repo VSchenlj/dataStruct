@@ -45,11 +45,25 @@ typedef struct BinaryThreadNode {
 void preOrderTraverse(BinaryTree T);
 
 /**
+ * @brief 前序遍历非递归算法
+ * 
+ * @param T 
+ */
+void preOrderTraverse2(BinaryTree T);
+
+/**
  * @brief 中序遍历递归算法
  * 
  * @param T 二叉树指针
  */
 void inOrderTraverse(BinaryTree T);
+
+/**
+ * @brief 中序遍历非递归算法
+ * 
+ * @param T 二叉树指针
+ */
+void inOrderTraverse2(BinaryTree T);
 
  /**
  * @brief 后序遍历递归算法
@@ -58,8 +72,15 @@ void inOrderTraverse(BinaryTree T);
  */
 void postOrderTraverse(BinaryTree T);
 
+ /**
+ * @brief 后序遍历非递归算法
+ * 
+ * @param T 二叉树指针
+ */
+void postOrderTraverse2(BinaryTree T);
+
 /**
- * @brief 层序遍历算法
+ * @brief 层序遍历非递归算法
  * 
  * @param T 二叉树指针
  */

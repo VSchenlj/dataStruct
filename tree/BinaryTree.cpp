@@ -2,6 +2,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include <queue>
+#include <stack>
 #include <iostream>
 using namespace std;
 
@@ -13,6 +14,23 @@ void preOrderTraverse(BinaryTree T) {
     preOrderTraverse(T->rchild);
 }
 
+void preOrderTraverse2(BinaryTree T) {
+    if(T == NULL)
+        return;
+    stack<BinaryTree> myStack;
+    while(!myStack.empty() || T) {
+        if(T) {
+            printf("%c",T->data);
+            myStack.push(T);
+            T = T->lchild;
+        } else {
+            T = myStack.top();
+            myStack.pop();
+            T = T->rchild;
+        }
+    }
+}
+
 void inOrderTraverse(BinaryTree T) {
     if (T == NULL)
         return;
@@ -21,12 +39,51 @@ void inOrderTraverse(BinaryTree T) {
     inOrderTraverse(T->rchild);
 }
 
+void inOrderTraverse2(BinaryTree T) {
+    if(T == NULL)
+        return;
+    stack<BinaryTree> myStack;
+    while(!myStack.empty() || T) {
+        if(T) {
+            myStack.push(T);
+            T = T->lchild;
+        } else {
+            T = myStack.top();
+            myStack.pop();
+            printf("%c",T->data);
+            T = T->rchild;
+        }
+    }
+}
+
 void postOrderTraverse(BinaryTree T) {
     if (T == NULL)
         return;
     postOrderTraverse(T->lchild);
     postOrderTraverse(T->rchild);
     printf("%c", T->data);
+}
+
+void postOrderTraverse2(BinaryTree T) {
+    if(T==NULL)
+        return;
+    stack<BinaryTree> myStack;
+    stack<BinaryTree> myStack2;
+    myStack.push(T);
+    while(!myStack.empty()) {
+        BinaryTree temp = myStack.top();
+        myStack.pop();
+        myStack2.push(temp);
+        if(temp->lchild)
+            myStack.push(temp->lchild);
+        if(temp->rchild)
+            myStack.push(temp->rchild);
+    }
+    while(!myStack2.empty()) {
+        BinaryTree temp = myStack2.top();
+        myStack2.pop();
+        printf("%c",temp->data);
+    }
 }
 
 void levelOrderTraverse(BinaryTree T) {
@@ -92,9 +149,11 @@ void inThreading(BinaryThreadTree T,BinaryThreadTree *pre) {
 void inOrderTraverseThr(BinaryThreadTree T) {
     BinaryThreadTree p = T;
     while(p) {
+        //查找前驱头部
         while(p->lTag == Link)
             p = p->lchild;
         cout << p->data << " ";
+        //查找该前驱的后继
         while(p->rTag == Thread && p->rchild !=NULL) {
             p = p->rchild;
             cout << p->data << " ";
