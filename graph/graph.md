@@ -7,4 +7,9 @@
 * 图中，任意两个顶点之间都可能有关系，顶点之间的逻辑关系用边来表示。  
 ### 1.1.1 各种图定义
 1）无向边：若顶点vi到vj之间的边没有方向，则称这条边为无向边（Edge），用无序偶对（vi，vj）来表示。如果图中任意两个顶点之间的边都是无向边
-，则称该图为无向图（Undirected graphs）。
+，则称该图为无向图（Undirected graphs）。对于如下所示的无向图G1来说，G1=（V1，{E1}），其中顶点集合V1={A,B,C,D}；边集合E1={(A,B),(B,C)}
+(C,D),(D,A),(A,C)}  
+![avatar](https://github.com/VSchenlj/dataStruct/blob/master/graph/%E6%97%A0%E5%90%91%E5%9B%BE.png)  
+2）有向边：若从顶点vi到vj的边有方向，则称这条边为有向边，也称为弧（Arc）。用有序偶对<vi,vj>来表示，vi称为弧尾（Tail），vj称为弧头（Head）。
+若图中任意两个顶点间的边都是有向边，则称该图为有向图（Directed graphs）。对于如下所示的有向图G2来说，G2=（V2,{E2}），其中顶点集合V1={A,B
+,C,D}；弧集合E2={<A,D>,<B,A>,<C,A>,<B,C>}。
